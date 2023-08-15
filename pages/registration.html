@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundoo Registration</title>
+    <link rel="stylesheet" href="/style/registration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/script/registration.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="left">
+                <div class="f-form">
+                    <div class="logo">
+                        <span class="letter">F</span>
+                        <span class="letter">u</span>
+                        <span class="letter">n</span>
+                        <span class="letter">d</span>
+                        <span class="letter">o</span>
+                        <span class="letter">o</span>
+                    </div>
+
+                    <h3>Create Your Fundoo Note Account</h3>
+                    <form>
+                        <div class="details">
+                            <div class="fdetail">
+                                <input type="text" ,name="" placeholder="First Name" id="firstName">
+                                <p id="ferror"></p>
+                            </div>
+                            <div class="ldetail">
+                                <input type="text" ,name="" placeholder="last Name" id="lastName">
+                                <p id="lerror"></p>
+                            </div>
+                        </div>
+                        <div class="edetail">
+                            <input type="email" ,name="" placeholder="email address" id="email">
+                            <p id="emerror"></p>
+                        </div>
+                        <span>You can use letters numbers and periods</span>
+                        <br>
+                        <a href="#">Use my current address instead</a>
+                        <div class="pass">
+                            <div class="pdetail">
+                                <input type="password" name="" placeholder="password" id="password">
+                                <p id="passerror"></p>
+                            </div>
+                            <div class="cnfdetail">
+                                <input type="password" name="" placeholder="confirm" id="cnfpass">
+                                <p id="cnferror"></p>
+                            </div>
+                        </div>
+                        <span>Use 8 or more characters with a mix of letters, numbers & symbols</span>
+                        <div class="b-link">
+                            <a href="/pages/login.html">Sign in instead</a>
+                            <!-- <input type="submit" id="next" value="Next"> -->
+                            <button class="submit" id="next">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+                <img src="/img/registration.png" alt="login_img">
+                <p>One account.All Fundoo woking for you.</p>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
