@@ -1,0 +1,101 @@
+header{
+    display: flex;
+    border: 1px solid rgb(210, 200, 200);
+    width: 100%;
+    height: 66px;
+    justify-content: space-around;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo p{
+    font-size: 25px;
+}
+.logo img{
+    width: 70px;
+    height: 50px;
+}
+.menu_bar div{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+.search_bar{
+    display: flex;
+  align-items: center; 
+  position: relative;
+  /* display: inline-block; */
+}
+
+.search_bar input[type="text"]{
+    width: 600px;
+    height: 50px;
+    align-items: center;
+    background-color: rgb(243, 246, 248);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    padding: 3px 3px 4px 30px;
+    /* border: 1px solid #ccc; */
+    font-size: 15px;
+}
+#search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+#search-icon i {
+    font-size: 20px;
+}
+#clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+.right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 3px solid red; */
+    width: 300px;
+    margin-left: 0px;
+}
+.list_icons{
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 3px solid red; */
+    /* gap: 10px; */
+}
+.list_icons img{
+    width: 30px;
+    height: 30px;
+}
+.right_icons{
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red */
+}
+.right_icons img{
+    width: 30px;
+    height: 30px;
+}
+.profile_pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; 
+    overflow: hidden;
+  }
+.profile_pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

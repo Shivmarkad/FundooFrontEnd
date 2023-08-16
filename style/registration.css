@@ -99,7 +99,7 @@ form input[type="password"]{
     margin-top: 2.2rem;
     align-items: center;
 }
-form input[type="submit"]{
+.submit{
     background: #3498db;
     color: white;
     padding: 0.5rem 1.3rem;
