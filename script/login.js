@@ -25,12 +25,14 @@ document.addEventListener("submit", function (event) {
         email:email,
         password:password
     }
+    console.log(data)
     $.ajax({
         url:"http://localhost:3000/api/v1/users/login",
         type:"POST",
         data:data,
-        SUCCESS: function(result){
-            alert(result)
+        success: function(result){
+            console.log("Login Successfully")
+            console.log(result)
         }
     })
 })
