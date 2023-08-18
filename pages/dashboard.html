@@ -7,6 +7,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../style/dashboard.css">
+    
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                 <img src="../img/settings_icon.png" alt="settings">
             </div>
             <div class="right_icons">
-                <img src="../img/apps_grid.png" alt="more_apps">
+                <img src="../img/apps_grid.png" id="more_apps">
                 <div class="profile_pic">
                     <img src="../img/profilePic.jpg" alt="profile_pic">
                 </div>
@@ -43,6 +44,17 @@
             <li><img src="../img/bin.png" alt=""><p>Bin</p></li>
         </ul>
     </div>
+    <div class="note_container">
+    <div class="note">
+        <input type="text" placeholder="Title" id="title">
+        <input type="text" placeholder="Take a note..." id="description">
+        <div class="note_pop" id="note_pop">
+            <img src="../img/archieve.png" alt="archiev">
+            <img src="../img/color_pallet.png" alt="color">
+        </div>
+    </div>
+    </div>
+    <script src="../script/dashboard.js"></script>
 </body>
 
 </html>
