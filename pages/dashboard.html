@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../style/dashboard.css">
-    
+
 </head>
 
 <body>
@@ -38,22 +39,44 @@
     </header>
     <div class="side_nav">
         <ul>
-            <li><img src="../img/bulb.png" alt=""><p>Notes</p></li>
-            <li><img src="../img/bell_icon.png" alt=""><p>Reminders</p></li>
-            <li><img src="../img/archieve.png" alt=""><p>archieve</p></li>
-            <li><img src="../img/bin.png" alt=""><p>Bin</p></li>
+            <li><img src="../img/bulb.png" alt="">
+                <p>Notes</p>
+            </li>
+            <li><img src="../img/bell_icon.png" alt="">
+                <p>Reminders</p>
+            </li>
+            <li><img src="../img/archieve.png" alt="">
+                <p>archieve</p>
+            </li>
+            <li><img src="../img/bin.png" alt="">
+                <p>Bin</p>
+            </li>
         </ul>
     </div>
     <div class="note_container">
-    <div class="note">
-        <input type="text" placeholder="Title" id="title">
-        <input type="text" placeholder="Take a note..." id="description">
-        <div class="note_pop" id="note_pop">
-            <img src="../img/archieve.png" alt="archiev">
-            <img src="../img/color_pallet.png" alt="color">
+        <div class="note" id="note">
+            <input type="text" placeholder="Title" id="title">
+            <input type="text" placeholder="Take a note..." id="description">
+            <div class="button_menu" id="button_icons">
+                <img src="../img/archieve.png" alt="archiev">
+                <img src="../img/color_pallet.png" alt="color">
+                <div class="colors"  id="colors">
+                    <img src="" alt="red">
+                    <img src="" alt="blue">
+                    <img src="" alt="green">
+                    <img src="" alt="yellow">
+                </div>
+                <button class="close" id="closeNote">Close</button>
+            </div>
         </div>
     </div>
+    <div class="all_notes">
+        <div class="note_element">
+            <span class="note_element_title">hello there</span>
+            <p class="note_element_desc">this is the description</p>
+        </div>
     </div>
+
     <script src="../script/dashboard.js"></script>
 </body>
 
