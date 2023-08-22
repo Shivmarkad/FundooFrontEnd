@@ -32,7 +32,10 @@ document.addEventListener("submit", function (event) {
         data:data,
         success: function(result){
             console.log("Login Successfully")
-            console.log(result)
+            console.log(result);
+            let token = result.data;
+            localStorage.setItem('token',token);
+            window.location.href = 'http://127.0.0.1:5500/pages/dashboard.html'
         }
     })
 })

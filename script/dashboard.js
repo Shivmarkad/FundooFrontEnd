@@ -10,15 +10,19 @@ function addnote(title, desc) {
         title: title,
         description: desc
     };
-    // $.ajax({
-    //     url:"http://localhost:3000/api/v1/note",
-    //     type:"POST",
-    //     data:data,
-    //     success: function(result){
-    //         console.log("Note created Successfully")
-    //         console.log(result)
-    //     }
-    // });
+    let token = localStorage.getItem('token');
+    $.ajax({
+        url: "http://localhost:3000/api/v1/note",
+        type: "POST",
+        headers: {
+            'Authorization': token
+        },
+        data: data,
+        success: function (result) {
+            console.log("Note created Successfully")
+            console.log(result)
+        }
+    });
 
     const htmlData = `<div class="note_element">
     <span class="note_element_title">${title}</span>
@@ -57,3 +61,20 @@ closeNote.addEventListener('click', () => {
     }
 })
 
+
+const colorPallet = document.getElementById('color_pallet');
+const colors = document.getElementById('colors');
+
+const noteEle = document.querySelector('.note_element');
+
+colorPallet.addEventListener('click', () => {
+    colors.classList.toggle('hidden');
+});
+
+colors.addEventListener('click', (event) => {
+    const selectedColor = event.target.getAttribute('data-color');
+    if (selectedColor) {
+        noteEle.style.backgroundColor = selectedColor;
+        colors.classList.add('hidden');
+    }
+});
