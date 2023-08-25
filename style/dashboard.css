@@ -46,6 +46,7 @@ header {
 }
 
 .search_bar input[type="text"] {
+    position: relative;
     width: 700px;
     height: 40px;
     align-items: center;
@@ -278,10 +279,30 @@ ul li p {
     align-content: flex-start;
 }
 .note_element{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin: 10px;
     padding: 8px;
     width: 250px;
     height: 150px;
     border: 2px solid rgb(220, 213, 213);
     border-radius: 8px;
+}
+.note_buttons{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.note_buttons img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.note_element:hover .note_buttons{
+    display: flex;
 }

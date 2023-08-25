@@ -14,7 +14,7 @@ function addnote(title, desc) {
     $.ajax({
         url: "http://localhost:3000/api/v1/note",
         type: "POST",
-        headers: {'Authorization': token},
+        headers: {'Authorization': 'bearer '+token},
         data: data,
         success: function (result) {
             console.log("Note created Successfully")
@@ -22,8 +22,9 @@ function addnote(title, desc) {
         }});
 
     const htmlData = `<div class="note_element">
-    <span class="note_element_title">${title}</span>
-    <p class="note_element_desc">${desc}</p></div>`
+    <h4>${title}</h4>
+    <p>${desc}</p>
+</div>  `
 
     allNotes.insertAdjacentHTML('afterBegin', htmlData);
     document.body.appendChild(allNotes);
