@@ -7,27 +7,20 @@ const allNotes = document.querySelector('.all_notes');
 
 function addnote(title, desc) {
     let token = localStorage.getItem('token');
-    let data = {
-        title: title,
-        description: desc
-    };
+    let data = {title: title,description: desc};
     $.ajax({
         url: "http://localhost:3000/api/v1/note",
         type: "POST",
-        headers: {'Authorization': 'bearer '+token},
+        headers: { 'Authorization': 'bearer ' + token },
         data: data,
         success: function (result) {
             console.log("Note created Successfully")
             console.log(result)
         }});
 
-    const htmlData = `<div class="note_element">
-    <h4>${title}</h4>
-    <p>${desc}</p>
-</div>  `
+    const htmlData = `<div class="note_element"><p>${title}</p><p>${desc}</p></div>  `
 
     allNotes.insertAdjacentHTML('afterBegin', htmlData);
-    document.body.appendChild(allNotes);
 }
 
 description.addEventListener('click', () => {
@@ -56,21 +49,5 @@ closeNote.addEventListener('click', () => {
         note.classList.remove('after_focus');
     } else {
         addnote(ttl, desc);
-    }})
-
-
-// const colorPallet = document.getElementById('color_pallet');
-// const colors = document.getElementById('colors');
-// const noteEle = document.querySelector('.note_element');
-
-// colorPallet.addEventListener('click', () => {
-//     colors.classList.toggle('hidden');
-// });
-
-// colors.addEventListener('click', (event) => {
-//     const selectedColor = event.target.getAttribute('data-color');
-//     if (selectedColor) {
-//         noteEle.style.backgroundColor = selectedColor;
-//         colors.classList.add('hidden');
-//     }
-// });
+    }
+})
