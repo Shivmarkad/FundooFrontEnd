@@ -7,7 +7,7 @@ const allNotes = document.querySelector('.all_notes');
 
 function addnote(title, desc) {
     let token = localStorage.getItem('token');
-    let data = {title: title,description: desc};
+    let data = { title: title, description: desc };
     $.ajax({
         url: "http://localhost:3000/api/v1/note",
         type: "POST",
@@ -16,7 +16,8 @@ function addnote(title, desc) {
         success: function (result) {
             console.log("Note created Successfully")
             console.log(result)
-        }});
+        }
+    });
 
     const htmlData = `<div class="note_element"><p>${title}</p><p>${desc}</p></div>  `
 
@@ -51,3 +52,12 @@ closeNote.addEventListener('click', () => {
         addnote(ttl, desc);
     }
 })
+
+function moreOptions(event) {
+    let ele = event.target;
+    const id = ele.id;
+    const menu = document.querySelector('.popupMenu');
+    console.log(menu)
+    menu.style.display = 'flex';
+
+}

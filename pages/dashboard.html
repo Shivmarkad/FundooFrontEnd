@@ -39,10 +39,10 @@
     </header>
     <div class="side_nav">
         <ul>
-            <li><img src="../img/bulb.png" alt=""><p>Notes</p></li>
+            <li><img src="../img/bulb.png" alt="" onclick="getAllNOtes()"><p>Notes</p></li>
             <li><img src="../img/bell_icon.png" alt=""><p>Reminders</p></li>
-            <li><img src="../img/archieve.png" alt="" onclick="mapArchieveNotes()"><p>archieve</p></li>
-            <li><img src="../img/bin.png" alt="" onclick="mapTrashedNotes()"><p>Bin</p></li>
+            <li><img src="../img/archieve.png" alt="" onclick="getAllNOtes('archive')"><p>archieve</p></li>
+            <li><img src="../img/bin.png" alt="" onclick="getAllNOtes('trash')"><p>Bin</p></li>
         </ul>
     </div>
     <div class="note_container">
@@ -62,6 +62,7 @@
                     <img src="../img/green.jpg" data-color="#77f258" alt="green" class="color_options">
                 </div>
                 <button class="close" id="closeNote">Close</button>
+
             </div>
         </div>
     </div>
