@@ -322,11 +322,20 @@ ul li p {
     padding: 10px;
 }
 .c-button{
-    background-color: white;
+    background-color: rgb(33, 11, 11);
     border: none;
     cursor: pointer;
 }
-/* 
-.dropdown{
 
-} */
+.more:hover .dropdown-content{
+    display: flex;
+}
+.dropdown-content{
+    background-color: white;
+    border: 2px solid red;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top:   200px;
+    z-index: 2;
+}

@@ -46,29 +46,29 @@ function getAllNOtes(listType = "allNotes") {
 function displayNotes(array) {
     document.getElementById('notes').innerHTML = array.map(note =>
         `<div class="note_element" id="${note._id}">
-           <p id="${note._id}" contenteditable="true">${note.title}</p>
-           <p id="${note._id}" contenteditable="true">${note.description}</p>
-            <div class="note_buttons" id="button_icons">
-                <img src="../img/alert.png" alt="alert">
-                <img src="../img/person_add.png" alt="add_person">
-                <img src="../img/color_pallet.png" alt="color" id="color_pallet">
-                <img src="../img/img.png" alt="img">
-                <img id="${note._id}" src="../img/archieve.png" alt="archieve" id="archieve" onclick="archieve(event)">
-                <div class="dropdown">
-                    <img src="../img/more_vert.png" alt="more" id = ${note._id} onclick = "moreOptions(event)">
-                 <div class="popupMenu" >
-                    <button class="c-button" onclick = "trash(event)" id=${note._id}>delete</button>
-                    <button class="c-button">copy</button>
-                    
+        <p id="${note._id}" contenteditable="true">${note.title}</p>
+        <p id="${note._id}" contenteditable="true">${note.description}</p>
+         <div class="note_buttons" id="button_icons">
+             <img src="../img/alert.png" alt="alert">
+             <img src="../img/person_add.png" alt="add_person">
+             <img src="../img/color_pallet.png" alt="color" id="color_pallet">
+             <img src="../img/img.png" alt="img">
+             <img id="${note._id}" src="../img/archieve.png" alt="archieve" id="archieve" onclick="archieve(event)">
+             <div class="dropdown">
+                <img id="more" class="more"onclick = "moreOptions(event)" title="more"src="../img/more_vert.png" alt=""> 
+                    <div id="myDropdown" class="dropdown-content">
+                        <a id=${note.id} onclick="trash(event)">Delete Note</a>
+                        <a >About</a>
+                        <a >Contact</a>
                     </div>
-                 </div>
-                <div class="hidden" id="colors">
-                    <img src="../img/sky_blue.png" data-color="#87CEEB" alt="sky_blue" class="color_options">
-                    <img src="../img/yellow.png" data-color="#eff840" alt="yello" class="color_options">
-                    <img src="../img/green.jpg" data-color="#77f258" alt="green" class="color_options">
+                    <div class="hidden" id="colors">
+                        <img src="../img/sky_blue.png" data-color="#87CEEB" alt="sky_blue" class="color_options">
+                        <img src="../img/yellow.png" data-color="#eff840" alt="yello" class="color_options">
+                        <img src="../img/green.jpg" data-color="#77f258" alt="green" class="color_options">
+                    </div>
                 </div>
             </div>
-        </div>`
+    </div>`
     )
 }
 

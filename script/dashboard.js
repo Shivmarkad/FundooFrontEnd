@@ -42,8 +42,6 @@ closeNote.addEventListener('click', () => {
     const ttl = document.getElementById('title').value;
     const desc = document.getElementById('description').value;
 
-    console.log(ttl, desc);
-
     if (ttl == "" && desc == "") {
         title.style.display = "none";
         button_icons.style.display = "none";
@@ -54,10 +52,6 @@ closeNote.addEventListener('click', () => {
 })
 
 function moreOptions(event) {
-    let ele = event.target;
-    const id = ele.id;
-    const menu = document.querySelector('.popupMenu');
-    console.log(menu)
+    const menu = document.querySelector('.dropdown-content');
     menu.style.display = 'flex';
-
 }
