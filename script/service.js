@@ -44,7 +44,7 @@ function getAllNOtes(listType = "allNotes") {
 
 function displayNotes(array) {
     document.getElementById('notes').innerHTML = array.map(note =>
-        `<div class="note_element" id="${note._id}">
+        ` <div class="note_element" id="${note._id}">
         <p id="${note._id}" contenteditable="true">${note.title}</p>
         <p id="${note._id}" contenteditable="true">${note.description}</p>
          <div class="note_buttons" id="button_icons">
@@ -58,13 +58,11 @@ function displayNotes(array) {
                 </div>
             
                 <img id="${note._id}" src="../img/archieve.png" alt="archieve" onclick="archieve(event)">
-                <img id="${note._id}" src="../img/bin.png" alt="trash" onclick="trash(event)">
                 <img id="${note._id}" class="more" onclick = "moreOptions(event)" title="more" src="../img/more_vert.png" alt=""> 
-            <div class="dropdown-content">
+            <div class="dropdown-content" id="moreOpsBox${note._id}">
                 <a id="${note._id}" onclick="trash(event)">delete</a>
                 <a >About</a>
                 <a >Contact</a>
-            
             </div>
         </div>
     </div>`

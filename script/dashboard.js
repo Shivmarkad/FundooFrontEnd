@@ -54,7 +54,6 @@ closeNote.addEventListener('click', () => {
 function moreOptions(event) {
     const element = event.target;
     const id = element.id;
-    console.log(id)
-    const menu = document.getElementById('moreops');
+    const menu = document.getElementById(`moreOpsBox${id}`);
     menu.style.display == 'flex'? menu.style.display='none':menu.style.display='flex'
 }
