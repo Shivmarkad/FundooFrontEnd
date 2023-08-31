@@ -52,6 +52,9 @@ closeNote.addEventListener('click', () => {
 })
 
 function moreOptions(event) {
-    const menu = document.querySelector('.dropdown-content');
-    menu.style.display = 'flex';
+    const element = event.target;
+    const id = element.id;
+    console.log(id)
+    const menu = document.getElementById('moreops');
+    menu.style.display == 'flex'? menu.style.display='none':menu.style.display='flex'
 }
