@@ -44,10 +44,10 @@ function getAllNOtes(listType = "allNotes") {
 
 function displayNotes(array) {
     document.getElementById('notes').innerHTML = array.map(note =>
-        ` <div class="note_element" id="${note._id}">
-        <p id="${note._id}" contenteditable="true">${note.title}</p>
-        <p id="${note._id}" contenteditable="true">${note.description}</p>
-         <div class="note_buttons" id="button_icons">
+        ` <div class="note_element" id="note_element${note._id}">
+        <p id="${note._id}" >${note.title}</p>
+        <p id="${note._id}" >${note.description}</p>
+        <div class="note_buttons" id="button_icons">
             <img src="../img/alert.png" alt="alert">
             <img src="../img/person_add.png" alt="add_person">
             <img src="../img/color_pallet.png" alt="color" id="color_pallet">
@@ -104,5 +104,8 @@ function trash(event) {
         }
     })
 }
+
+const noteElement = document.getElementById('note_element${note._id}')
+
 
 getAllNOtes()
