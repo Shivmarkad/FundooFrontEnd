@@ -2,6 +2,13 @@ let token = localStorage.getItem('token');
 const notes_area = document.getElementById("notes")
 const note_buttons = document.querySelector('.button_menu')
 
+const edit = document.getElementById('update')
+const title_edit = document.getElementById('update_title')
+const desc_edit = document.getElementById('update_desc')
+const update_button = document.getElementById('button')
+
+const noteElement = document.getElementById('note_element')
+
 var array;
 
 function getAllNOtes(listType = "allNotes") {
@@ -45,8 +52,8 @@ function getAllNOtes(listType = "allNotes") {
 function displayNotes(array) {
     document.getElementById('notes').innerHTML = array.map(note =>
         ` <div class="note_element" id="note_element${note._id}">
-        <p id="${note._id}" >${note.title}</p>
-        <p id="${note._id}" >${note.description}</p>
+        <p id="${note._id}-title" class="edit-content">${note.title}</p>
+        <p id="${note._id}-description" class="edit-content">${note.description}</p>
         <div class="note_buttons" id="button_icons">
             <img src="../img/alert.png" alt="alert">
             <img src="../img/person_add.png" alt="add_person">
@@ -65,8 +72,25 @@ function displayNotes(array) {
                 <a >Contact</a>
             </div>
         </div>
-    </div>`
+    </div>
+</div>`
     )
+
+    const editableContentElements = document.querySelectorAll('.edit-content');
+ 
+    editableContentElements.forEach((element) => {
+        element.addEventListener('click', () => {
+            const id = element.id.split("-")[0];
+
+            const titleEle = document.getElementById(`${id}-title`);
+            const descEle = document.getElementById(`${id}-description`);
+            edit.style.display = 'flex';
+
+            title_edit.value = titleEle.textContent
+            desc_edit.value = descEle.textContent
+            update_button.id = id
+        });
+    });
 }
 
 function archieve(event) {
@@ -105,7 +129,32 @@ function trash(event) {
     })
 }
 
-const noteElement = document.getElementById('note_element${note._id}')
 
+function UpdateNote(event) {
+
+    const button = event.target;
+    const id = button.id
+    console.log(id)
+
+    const title_to_update = title_edit.value
+    const desc_to_update = desc_edit.value
+
+    let data = { title: title_to_update, description: desc_to_update };
+
+    $.ajax({
+        url: `http://localhost:3000/api/v1/note/${id}`,
+        type: "PUT",
+        headers: {
+            'Authorization': 'bearer ' + token
+        },
+        data: data,
+        success: function (result) {
+            console.log("Notes updated Successfully")
+            console.log(result);
+            edit.style.display = 'none';
+        }
+    })
+
+}
 
 getAllNOtes()

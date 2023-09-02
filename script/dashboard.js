@@ -6,7 +6,6 @@ const note = document.querySelector('.note');
 const allNotes = document.querySelector('.all_notes');
 
 function addnote(title, desc) {
-    let token = localStorage.getItem('token');
     let data = { title: title, description: desc };
     $.ajax({
         url: "http://localhost:3000/api/v1/note",
@@ -55,5 +54,10 @@ function moreOptions(event) {
     const element = event.target;
     const id = element.id;
     const menu = document.getElementById(`moreOpsBox${id}`);
-    menu.style.display == 'flex'? menu.style.display='none':menu.style.display='flex'
+    menu.style.display == 'flex' ? menu.style.display = 'none' : menu.style.display = 'flex'
+}
+
+function close(){
+    console.log('clicked')
+    edit.style.display = 'none';
 }

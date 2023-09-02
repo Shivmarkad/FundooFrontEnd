@@ -356,7 +356,7 @@ ul li p {
 .updatenote{
     position: absolute;
     padding: 10px;
-    display: flex;
+    display: none;
     top: 30%;
     left: 30%;
     flex-direction: column;
@@ -366,7 +366,7 @@ ul li p {
     width: 600px;
     height: 150px;
     border: #ca5415 2px solid;
-    z-index: 1;
+    z-index: 2;
     background-color: #ffff;
 }
 .updatenote input[type='text']{

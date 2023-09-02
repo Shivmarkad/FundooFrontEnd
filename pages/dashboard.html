@@ -75,15 +75,11 @@
         </div>
     </div>
     <div class="all_notes" id="notes">
-        <!-- <div class="note_element">
-            <h4>hello there</h4>
-            <p>this is the description</p>
-        </div> -->
-
-    </div>
-    <div class="updatenote">
+    <!-- all notes will be displayed here  -->
+    </div> 
+    <div class="updatenote" id="update">
         <input type="text" placeholder="title" id="update_title">
-        <input type="text" placeholder="description" id="update_desc">
+        <input type="text" placeholder="description" id="update_desc" >
         <div class="note_buttons" id="button_icons_update">
             <img src="../img/alert.png" alt="alert">
             <img src="../img/person_add.png" alt="add_person">
@@ -93,9 +89,9 @@
                 <img src="../img/yellow.png" data-color="#eff840" alt="yello" class="color_options">
                 <img src="../img/green.jpg" data-color="#77f258" alt="green" class="color_options">
             </div>
-
             <img src="../img/archieve.png" alt="archieve" onclick="archieve()">
-            <button>Update</button>
+            <button >Close</button>
+            <button id="button" onclick="UpdateNote(event)">Update</button>
         </div>
     </div>
     <script src="../script/dashboard.js"></script>
