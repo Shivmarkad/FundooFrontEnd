@@ -17,9 +17,7 @@ function addnote(title, desc) {
             console.log(result)
         }
     });
-
     const htmlData = `<div class="note_element"><p>${title}</p><p>${desc}</p></div>  `
-
     allNotes.insertAdjacentHTML('afterBegin', htmlData);
 }
 
@@ -38,15 +36,18 @@ document.addEventListener('click', (event) => {
 });
 
 closeNote.addEventListener('click', () => {
-    const ttl = document.getElementById('title').value;
-    const desc = document.getElementById('description').value;
 
-    if (ttl == "" && desc == "") {
+    const ttl = document.getElementById('title');
+    const desc = document.getElementById('description');
+
+    if (ttl.value == "" && desc.value == "") {
         title.style.display = "none";
         button_icons.style.display = "none";
         note.classList.remove('after_focus');
     } else {
-        addnote(ttl, desc);
+        title.value = '';
+        description.value ='';
+        addnote(title.value, title.value);
     }
 })
 
@@ -58,6 +59,5 @@ function moreOptions(event) {
 }
 
 function close(){
-    console.log('clicked')
     edit.style.display = 'none';
 }
