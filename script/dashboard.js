@@ -45,9 +45,9 @@ closeNote.addEventListener('click', () => {
         button_icons.style.display = "none";
         note.classList.remove('after_focus');
     } else {
+        addnote(title.value, description.value); 
         title.value = '';
         description.value ='';
-        addnote(title.value, title.value);
     }
 })
 
